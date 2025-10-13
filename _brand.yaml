@@ -1,0 +1,25 @@
+meta:
+  name: Cannondale Brand
+  link: https://www.cannondale.com
+
+logo:
+  small: "www/cannondale_logo.png"  # Vervang door het juiste pad
+  medium: "www/cannondale_logo.png"  # Vervang door het juiste pad
+  large: "www/cannondale_logo.png"  # Vervang door het juiste pad
+
+color:
+  palette:
+    green: "#00B140"
+    blue: "#004B87"
+    white: "#FFFFFF"
+    yellow: "#FFCC00"
+  primary: green
+  secondary: blue
+  background: white
+  text: "#333333"
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: google
+  base: Open Sans
