@@ -1,29 +1,28 @@
 # 0.1 packages ----
-core_tidyverse <- c(
-  "ggplot2",
-  "dplyr",
-  "tidyr",
-  "purrr",
-  "tibble",
-  "stringr",
-  "forcats"
-)
-other_pkgs <- c(
-  "parsnip",
-  "hardhat",
-  "tidyquant",
-  "odbc",
-  "RSQLite",
-  "shinychat",
-  "ellmer",
-  "plotly",
-  "bslib",
-  "shiny",
-  "shinyWidgets",
-  "shinyjs"
-)
-all_pkgs <- c(core_tidyverse, other_pkgs)
-lapply(all_pkgs, library, character.only = TRUE)
+# core tidyverse
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(tibble)
+library(stringr)
+library(forcats)
+
+# other
+library(parsnip)
+library(hardhat)
+library(tidyquant)
+library(odbc)
+library(RSQLite)
+library(shinychat)
+library(ellmer)
+library(plotly)
+library(bslib)
+library(shiny)
+library(shinyWidgets)
+library(shinyjs)
+library(xgboost)
+
 
 # 0.2 functions ----
 source("00_scripts/02_process_data.R")
