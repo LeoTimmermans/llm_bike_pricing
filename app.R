@@ -134,7 +134,7 @@ ui <- bslib::page_navbar(
       choices = models_tbl$model,
       selected = models_tbl |>
         filter(category_2 == "Over Mountain") |>
-        slice(1) |>
+        dplyr::slice(1) |>
         pull(model),
       options = list(
         title = "Kies een model",
@@ -248,7 +248,7 @@ server <- function(input, output, session) {
           pull(model),
         selected = models_tbl |>
           filter(category_2 == input$picker_category_2) |>
-          slice(1) |>
+          dplyr::slice(1) |>
           pull(model)
       )
     }
@@ -260,7 +260,7 @@ server <- function(input, output, session) {
       inputId = "text_bike_model",
       selected = models_tbl |>
         filter(category_2 == "Over Mountain") |>
-        slice(1) |>
+        dplyr::slice(1) |>
         pull(model)
     )
 
