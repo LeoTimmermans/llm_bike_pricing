@@ -96,7 +96,10 @@ rm(model_base, additional, additional_combos, result)
 
 # UI ----
 ui <- bslib::page_navbar(
-  title = "Bike Pricing",
+  title = div(
+    img(src = "Leo.jpg", height = "40px", style = "margin-right: 10px;"),
+    "Bike Pricing"
+  ),
   theme = bs_theme(brand = TRUE),
 
   # CSS ----
