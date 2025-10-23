@@ -28,6 +28,7 @@ library(xgboost)
 # 0.2 functions ----
 source("00_scripts/02_process_data.R")
 source("00_scripts/03_make_predictions.R")
+source("00_scripts/04_branding_4_plots.R")
 
 # 1 DATA ----
 # 1.1 get data ----
@@ -93,6 +94,9 @@ models_tbl <- tibble(model = models) |>
   )
 
 rm(model_base, additional, additional_combos, result)
+
+# 3.BRANDING ----
+brand <- load_brand("_brand.yml")
 
 # UI ----
 ui <- bslib::page_navbar(
@@ -297,7 +301,7 @@ server <- function(input, output, session) {
   # SERV 2.1 Plotly plot ----
   output$plotly_1 <- renderPlotly({
     bind_bike_prediction(bikes_tbl, new_bike_tbl()) %>%
-      plot_bike_prediction()
+      plot_bike_prediction(brand = brand)
   })
 
   # SERV 2.2 Table ----

@@ -5264,7 +5264,7 @@
       "checksum": "36d700dc2c68b0af6884486c2b5f4c9f"
     },
     ".Rprofile": {
-      "checksum": "315a2e1db57f83535f5c27faf08db31e"
+      "checksum": "7ec74250954ca2b6ed5794409dff5708"
     },
     ".vscode/extensions.json": {
       "checksum": "2ef9124db7b74d4d8b218a4be113f4e4"
@@ -5291,19 +5291,25 @@
       "checksum": "cf297ee121966175e20235f5f5cd2f16"
     },
     "00_scripts/03_make_predictions.R": {
-      "checksum": "bd00e37f00cca2b6309b0c1d58281225"
+      "checksum": "d0e2d9173c874ce7d85e240a21739cc8"
+    },
+    "00_scripts/04_branding_4_plots.R": {
+      "checksum": "98d295920cf3ce8501eca8ebddad8d2b"
     },
     "air.toml": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app.R": {
-      "checksum": "93c99ac282be64cbc4b2317d6f89a216"
+      "checksum": "8d5f6974db24d765aa58a0f25b7985a9"
     },
     "renv.lock": {
       "checksum": "2ef231d0aff4725afe15ea7c44d4932d"
     },
     "www/cannondale_logo.png": {
       "checksum": "bd4bfb7706452ea42a87c59bb2abaa0f"
+    },
+    "www/Leo.jpg": {
+      "checksum": "2405ecd85d955d07e9f7018142682531"
     }
   },
   "users": null
