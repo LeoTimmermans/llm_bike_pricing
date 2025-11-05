@@ -328,6 +328,7 @@ server <- function(input, output, session) {
       "   • disc = 1 → The bike has disc brakes.",
       "- Always explain dummy features in plain English, not as numbers.",
       "- If a user asks something unrelated (e.g., politics, harmful content, or code unrelated to bikes), politely decline and redirect back to bike predictions.",
+      "- Always answer in the same language as the question(s).",
       "",
       "Style guidelines:",
       "- Speak like a data scientist explaining to a non-technical audience.",
@@ -441,7 +442,7 @@ server <- function(input, output, session) {
     frame_counts <- table(train_tbl$frame_material)
     cat1_counts <- table(train_tbl$category_1)
 
-    train_filtered <- 
+    train_filtered <-
       train_tbl %>%
       filter(
         category_1 == new_bike_tbl() %>% pull(category_1),
@@ -451,7 +452,7 @@ server <- function(input, output, session) {
     frame_counts_filt <- table(train_filtered$frame_material)
     cat1_counts_filt <- table(train_filtered$category_1)
 
-    train_frame <- 
+    train_frame <-
       train_tbl %>%
       filter(
         frame_material == new_bike_tbl() %>% pull(frame_material)
