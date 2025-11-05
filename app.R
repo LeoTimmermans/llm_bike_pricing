@@ -441,15 +441,52 @@ server <- function(input, output, session) {
     frame_counts <- table(train_tbl$frame_material)
     cat1_counts <- table(train_tbl$category_1)
 
+    train_filtered <- 
+      train_tbl %>%
+      filter(
+        category_1 == new_bike_tbl() %>% pull(category_1),
+        category_2 == new_bike_tbl() %>% pull(category_2)
+      )
+    price_summary_filt <- summary(train_filtered$price)
+    frame_counts_filt <- table(train_filtered$frame_material)
+    cat1_counts_filt <- table(train_filtered$category_1)
+
+    train_frame <- 
+      train_tbl %>%
+      filter(
+        frame_material == new_bike_tbl() %>% pull(frame_material)
+      )
+    price_summary_frame <- summary(train_frame$price)
+    frame_counts_frame <- table(train_frame$frame_material)
+    cat1_counts_frame <- table(train_frame$category_1)
+    cat2_counts_frame <- table(train_frame$category_2)
+
     train_context <- glue::glue(
       "
-      📊 Training data summary:
+      📊 Overall training data summary:
       • Price range: ${min(train_tbl$price)} - ${max(train_tbl$price)}
       • Median price: ${median(train_tbl$price)}
       • Mean price: ${round(mean(train_tbl$price), 0)}
       • Frame materials: {paste(names(frame_counts), frame_counts, sep=': ', collapse=', ')}
       • Bike Types: {paste(names(cat1_counts), cat1_counts, sep=': ', collapse=', ')}
       • Number of bikes: {nrow(train_tbl)}
+
+      📊 Training data summary for bikes in same bike type and bike category:
+      • Price range: ${min(train_filtered$price)} - ${max(train_filtered$price)}
+      • Median price: ${median(train_filtered$price)}
+      • Mean price: ${round(mean(train_filtered$price), 0)}
+      • Frame materials: {paste(names(frame_counts_filt), frame_counts_filt, sep=': ', collapse=', ')}
+      • Bike Types: {paste(names(cat1_counts_filt), cat1_counts_filt, sep=': ', collapse=', ')}
+      • Bike Models: {paste(names(cat1_counts_filt), cat1_counts_filt, sep=': ', collapse=', ')}
+      • Number of bikes: {nrow(train_filtered)}
+
+      📊 Training data summary for bikes in same frame material:
+      • Price range: ${min(train_frame$price)} - ${max(train_frame$price)}
+      • Median price: ${median(train_frame$price)}
+      • Mean price: ${round(mean(train_frame$price), 0)}
+      • Frame materials: {paste(names(frame_counts_frame), frame_counts_frame, sep=': ', collapse=', ')}
+      • Bike Types: {paste(names(cat1_counts_frame), cat1_counts_frame, sep=': ', collapse=', ')}
+      • Number of bikes: {nrow(train_frame)}
     "
     )
 
