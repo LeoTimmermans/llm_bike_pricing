@@ -326,7 +326,7 @@ server <- function(input, output, session) {
       "   • black = 1 → The bike's color is black.",
       "   • ultegra = 1 → The bike has a Shimano Ultegra groupset.",
       "   • disc = 1 → The bike has disc brakes.",
-      "- Always explain dummy features in plain English, not as numbers.",
+      "- Always explain dummy features in language the user can understand, not as numbers.",
       "- If a user asks something unrelated (e.g., politics, harmful content, or code unrelated to bikes), politely decline and redirect back to bike predictions.",
       "- Always answer in the same language as the question(s).",
       "",
